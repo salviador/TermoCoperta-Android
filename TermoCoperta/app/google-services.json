@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "270870631028",
+    "firebase_url": "https://notificationtermocoperta.firebaseio.com",
+    "project_id": "notificationtermocoperta",
+    "storage_bucket": "notificationtermocoperta.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:270870631028:android:14a883b2fb5a2b4e",
+        "android_client_info": {
+          "package_name": "com.example.termocoperta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "270870631028-io0rni7np396ine261rnqma0r7caggcj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBf9Cr_GiEgNeq4cauMeSgZHOHqnoKtQcQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
