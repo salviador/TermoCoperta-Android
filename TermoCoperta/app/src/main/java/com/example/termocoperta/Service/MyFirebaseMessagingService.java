@@ -24,6 +24,7 @@ import com.example.termocoperta.R;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Random;
@@ -88,10 +89,12 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                     statoCoperta.datetime = ft.parse(remoteMessage.getData().get("date").toString() + " " + remoteMessage.getData().get("time").toString());
                 }catch (ParseException pe){}
 
+                DateFormat dateFormat = new SimpleDateFormat("HH:mm  dd-MMM");
+
                 if(statoCoperta.State.toUpperCase().equals("ON")) {
-                    showNotification("Termo Coperta", statoCoperta.State.toUpperCase(), true);
+                    showNotification("Termo Coperta", statoCoperta.State.toUpperCase() + "    " + dateFormat.format(statoCoperta.datetime), true);
                 }else{
-                    showNotification("Termo Coperta", statoCoperta.State.toUpperCase(), false);
+                    showNotification("Termo Coperta", statoCoperta.State.toUpperCase() + "    " + dateFormat.format(statoCoperta.datetime), false);
                 }
                 Intent intent = new Intent(Constanti.BROADCAST_ACTION);
                 intent.putExtra(Constanti.BROADCAST_FIREBASE_MESSAGE,statoCoperta.toString());
