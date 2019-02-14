@@ -115,15 +115,15 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             notificationChannel.setDescription("EDMT Channel");
             notificationChannel.enableLights(true);
             notificationChannel.setLightColor(Color.BLUE);
-            notificationChannel.setVibrationPattern(new long[]{0,1000,500,1000});
+            notificationChannel.setVibrationPattern(new long[]{0,500}); //new long[]{0,1000,500,1000}
             notificationChannel.enableLights(true);
             notificationManager.createNotificationChannel(notificationChannel);
         }
 
+        //https://notificationsounds.com/message-tones/to-the-point-568
        // Uri urisound= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-        //final Uri sound = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.notification);
-        //final Uri sound = Uri.parse("android.resource://com.example.termocoperta/" + R.raw.notification);
-        final Uri sound = Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE + "://"+ getApplicationContext().getPackageName() + "/" + R.raw.notification);
+        //final Uri sound = Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE + "://"+ getApplicationContext().getPackageName() + "/" + R.raw.notification);
+        final Uri sound = Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE + "://"+ getApplicationContext().getPackageName() + "/" + R.raw.tothepoint);
 
         String sa =getPackageName();
         String sa4 =getPackageResourcePath();
@@ -134,7 +134,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 //.setDefaults(Notification.DEFAULT_ALL)
                 .setWhen(System.currentTimeMillis())
                 //.setVibrate(new long[]{0,1000,500,1000})
-                .setVibrate(new long[]{0,500,500})
+                .setVibrate(new long[]{0,500})
                 //.setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
                 .setSound(sound)
                 .setContentTitle(title)
